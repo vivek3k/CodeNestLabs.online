@@ -43,8 +43,8 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-secondary-foreground/60 text-sm leading-relaxed mb-5">
-              Building innovative custom projects with cutting-edge technology.
-              React, ML, Deep Learning, and Full-Stack Development.
+              The engineering partner for students, founders &amp; businesses.
+              150+ projects delivered across 15+ countries.
             </p>
             <div className="flex gap-2">
               {socialLinks.map((social) => (
@@ -105,10 +105,10 @@ const Footer = () => {
                   <Mail className="w-3.5 h-3.5 text-primary" />
                 </div>
                 <a
-                  href="mailto:vivekrajanala46@gmail.com"
+                  href="mailto:contactcodenestlabs@gmail.com"
                   className="hover:text-primary transition-colors duration-200"
                 >
-                  vivekrajanala46@gmail.com
+                  contactcodenestlabs@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-secondary-foreground/60">
@@ -124,9 +124,14 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-secondary-foreground/8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-secondary-foreground/50">
-              © {currentYear} CodeNestLabs. All rights reserved.
-            </p>
+            <div>
+              <p className="text-sm text-secondary-foreground/50">
+                © {currentYear} CodeNestLabs. All rights reserved.
+              </p>
+              <p className="text-xs text-secondary-foreground/35 mt-0.5">
+                Developed by the CodeNestLabs Team · Proudly serving India
+              </p>
+            </div>
             <div className="flex gap-6">
               <Link
                 to="/privacy"

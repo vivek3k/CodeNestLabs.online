@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CheckCircle2, Send, User, Briefcase, Link as LinkIcon } from "lucide-react";
+import { CheckCircle2, Send, User, Briefcase, Link as LinkIcon, Rocket } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
@@ -171,12 +171,23 @@ const RequestProject = () => {
   return (
     <main className="pt-16">
       {/* Hero - Compact */}
-      <section className="py-10 md:py-14 bg-muted/30">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="badge-primary mb-3">Start Your Project</span>
-          <h1 className="section-title text-foreground mb-2">Request a Project</h1>
+      <section className="relative py-20 md:py-24 overflow-hidden bg-secondary/60 dark:bg-transparent">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/4" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/6 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="badge-primary mb-4 inline-flex">
+            <Rocket className="w-3 h-3" />
+            Start Your Project
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-display uppercase tracking-wider text-foreground mb-4 leading-none">
+            Let's Build
+            <span className="text-gradient glow-text"> Something</span>
+            <br />
+            Great Together
+          </h1>
           <p className="section-subtitle mx-auto">
-            Tell us about your requirements and we'll get back with a proposal.
+            Fill in the details below — we'll review your request and respond within 24 hours with a proposal and timeline.
           </p>
         </div>
       </section>
@@ -197,7 +208,7 @@ const RequestProject = () => {
               aria-hidden="true"
             />
             {/* Personal Information */}
-            <div className="bg-card rounded-xl p-5 border border-border">
+            <div className="bg-card rounded-xl p-5 border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                   <User className="w-4 h-4 text-primary" />
@@ -216,13 +227,13 @@ const RequestProject = () => {
                 </div>
                 <div className="space-y-1.5 sm:col-span-2">
                   <Label htmlFor="phone" className="text-xs">Phone</Label>
-                  <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} placeholder="+1 (555) 000-0000" maxLength={20} className="h-9 text-sm" />
+                  <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} placeholder="+91 98765 43210" maxLength={20} className="h-9 text-sm" />
                 </div>
               </div>
             </div>
 
             {/* Project Details */}
-            <div className="bg-card rounded-xl p-5 border border-border">
+            <div className="bg-card rounded-xl p-5 border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Briefcase className="w-4 h-4 text-primary" />

@@ -101,7 +101,7 @@ const Contact = () => {
   return (
     <main className="pt-16">
       {/* Hero - Compact */}
-      <section className="py-10 md:py-14 bg-muted/30">
+      <section className="py-10 md:py-14 bg-secondary/60 dark:bg-muted/30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="badge-primary mb-3">Get in Touch</span>
           <h1 className="section-title text-foreground mb-2">Contact Us</h1>
@@ -129,8 +129,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground text-sm">Email</h3>
-                    <a href="mailto:vivekrajanala46@gmail.com" className="text-primary hover:underline text-xs break-all">
-                      vivekrajanala46@gmail.com
+                    <a href="mailto:contactcodenestlabs@gmail.com" className="text-primary hover:underline text-xs break-all">
+                      contactcodenestlabs@gmail.com
                     </a>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground text-sm">Location</h3>
-                    <p className="text-muted-foreground text-xs">Remote • Worldwide</p>
+                    <p className="text-muted-foreground text-xs">Serving All Over India</p>
                   </div>
                 </div>
               </div>
@@ -159,23 +159,23 @@ const Contact = () => {
                     <span className="flex-1 text-foreground">@CodeNestLabs</span>
                     <ExternalLink className="w-3 h-3 text-muted-foreground" />
                   </a>
-                  <a href="https://t.me/CodeNestLabs_user_help" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded bg-muted/50 hover:bg-muted text-xs group">
+                  <a href="https://t.me/contactcodenestlabs" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded bg-muted/50 hover:bg-muted text-xs group">
                     <HelpCircle className="w-3.5 h-3.5 text-primary" />
-                    <span className="flex-1 text-foreground">@CODENESTLABS_HELP</span>
+                    <span className="flex-1 text-foreground">@contactcodenestlabs</span>
                     <ExternalLink className="w-3 h-3 text-muted-foreground" />
                   </a>
                 </div>
               </div>
 
               <Button asChild className="w-full mt-4" size="default">
-                <a href="https://t.me/CodeNestLabs" target="_blank" rel="noopener noreferrer">
+                <a href="https://t.me/contactcodenestlabs" target="_blank" rel="noopener noreferrer">
                   <Send className="w-4 h-4" /> Chat on Telegram
                 </a>
               </Button>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-card rounded-xl p-5 border border-border">
+            <div className="bg-card rounded-xl p-5 border border-border shadow-sm">
               {isSubmitted ? (
                 <div className="text-center py-8">
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">

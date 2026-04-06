@@ -88,7 +88,7 @@ const Intro = () => {
             transitionDelay: "1s",
           }}
         >
-          Building the Future
+          Your Ideas. Our Code. Delivered.
         </p>
       </div>
 
