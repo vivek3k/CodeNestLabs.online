@@ -49,6 +49,7 @@ const PrivacyPolicy = () => {
               contactcodenestlabs@gmail.com
             </a>
           </div>
+
         </div>
       </section>
     </main>

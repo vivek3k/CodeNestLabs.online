@@ -152,19 +152,24 @@ const Footer = () => {
                 Built by the CodeNestLabs Engineering Team · Remote-first · Worldwide
               </p>
             </div>
-            <div className="flex gap-6">
-              <Link
-                to="/privacy"
-                className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors duration-200"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                to="/terms"
-                className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors duration-200"
-              >
-                Terms & Conditions
-              </Link>
+            <div className="flex flex-col items-end gap-2">
+              <div className="flex gap-6">
+                <Link
+                  to="/privacy"
+                  className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors duration-200"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  to="/terms"
+                  className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors duration-200"
+                >
+                  Terms & Conditions
+                </Link>
+              </div>
+              <p className="text-xs text-secondary-foreground/50">
+                Last updated on 31/05/2026
+              </p>
             </div>
           </div>
         </div>

@@ -1054,10 +1054,12 @@
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
+
+/* Tablet (641px – 1024px) — single column, clear navbar */
 @media (max-width: 1024px) {
   .vsc-hero-grid {
     grid-template-columns: 1fr;
-    padding: 60px 32px;
+    padding: 96px 32px 64px;  /* 96px top clears 64px navbar + breathing room */
     gap: 48px;
   }
 
@@ -1067,9 +1069,59 @@
   }
 }
 
+/* Mobile (≤ 640px) — phones in portrait */
 @media (max-width: 640px) {
-  .vsc-hero-grid { padding: 48px 20px; }
+  .vsc-hero-grid {
+    padding: 112px 20px 48px; /* 112px = 64px navbar + 48px breathing room */
+    gap: 40px;
+  }
+
+  .vsc-headline { margin-bottom: 18px; }
+
+  /* Scale down headline so it fits on narrow screens */
+  .vsc-h-black,
+  .vsc-h-indigo { font-size: clamp(28px, 8vw, 38px); line-height: 1.1; }
+
+  .vsc-h-sub    { font-size: clamp(24px, 7vw, 34px); line-height: 1.2; }
+
+  .vsc-subtext  {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .vsc-btn-primary,
+  .vsc-btn-outline {
+    font-size: 14px;
+    padding: 12px 22px;
+  }
+
   .vsc-feature-grid { padding: 32px 20px; gap: 24px; }
-  .vsc-body { height: 300px; }
-  .vsc-explorer { width: 140px; }
+  .vsc-body         { height: 300px; }
+  .vsc-explorer     { width: 140px; }
+}
+
+/* Small phones (≤ 400px) — e.g. iPhone SE, Galaxy A-series */
+@media (max-width: 400px) {
+  .vsc-hero-grid {
+    padding: 108px 16px 40px;
+    gap: 36px;
+  }
+
+  .vsc-h-black,
+  .vsc-h-indigo { font-size: clamp(24px, 8.5vw, 30px); }
+
+  .vsc-h-sub    { font-size: clamp(20px, 7.5vw, 26px); }
+
+  .vsc-subtext  { font-size: 14px; line-height: 1.65; margin-bottom: 24px; }
+
+  .vsc-btn-primary,
+  .vsc-btn-outline {
+    font-size: 13px;
+    padding: 11px 18px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .vsc-cta-row { flex-direction: column; gap: 12px; }
 }
