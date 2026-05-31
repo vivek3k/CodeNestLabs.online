@@ -33,7 +33,7 @@ const Intro = () => {
           phase === "glow" || phase === "fade" ? "opacity-100" : "opacity-0"
         }`}
         style={{
-          background: "radial-gradient(ellipse at center, hsl(0 72% 30% / 0.4) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at center, hsl(243 75% 35% / 0.45) 0%, transparent 70%)",
         }}
       />
 
@@ -88,7 +88,7 @@ const Intro = () => {
             transitionDelay: "1s",
           }}
         >
-          Your Ideas. Our Code. Delivered.
+          Engineering Products That Scale.
         </p>
       </div>
 

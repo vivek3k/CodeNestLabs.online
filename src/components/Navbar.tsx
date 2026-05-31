@@ -37,17 +37,17 @@ const Navbar = () => {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
           ? "bg-background/90 backdrop-blur-xl shadow-sm border-b border-border/40"
-          : "bg-transparent"
+          : "bg-background/60 backdrop-blur-md"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link to="/home" className="flex items-center gap-2.5 group">
-            <img 
-              src={logo} 
-              alt="CodeNestLabs Logo" 
-              className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-105"
+            <img
+              src={logo}
+              alt="CodeNestLabs Logo"
+              className="h-10 w-10 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <span className="text-lg font-semibold text-foreground tracking-tight">
               CodeNest<span className="text-primary">Labs</span>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,6 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Send, ExternalLink, Users, HelpCircle, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { Turnstile } from "@marsidev/react-turnstile";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name too long"),
@@ -18,12 +20,16 @@ const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 const COOLDOWN_SECONDS = 10;
 
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string;
+
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [cooldown, setCooldown] = useState(0);
   const [honeypot, setHoneypot] = useState("");
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
 
   // Cooldown timer
@@ -42,9 +48,15 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Honeypot check - if filled, it's a bot
+    // Honeypot check
     if (honeypot) {
       toast({ title: "Submission blocked", description: "Spam detected.", variant: "destructive" });
+      return;
+    }
+
+    // Captcha check
+    if (!captchaToken) {
+      toast({ title: "Verification required", description: "Please complete the CAPTCHA.", variant: "destructive" });
       return;
     }
 
@@ -86,12 +98,15 @@ const Contact = () => {
       if (response.ok) {
         setIsSubmitted(true);
         setCooldown(COOLDOWN_SECONDS);
+        setCaptchaToken(null);
         toast({ title: "Message Sent!", description: "We'll get back to you within 24 hours." });
       } else {
         throw new Error("Failed");
       }
     } catch {
       setCooldown(COOLDOWN_SECONDS);
+      setCaptchaToken(null);
+      turnstileRef.current?.reset();
       toast({ title: "Failed to Send", description: "Please try again.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
@@ -99,9 +114,9 @@ const Contact = () => {
   };
 
   return (
-    <main className="pt-16">
+    <main className="pt-16 page-enter">
       {/* Hero - Compact */}
-      <section className="py-10 md:py-14 bg-secondary/60 dark:bg-muted/30">
+      <section className="py-7 md:py-10 bg-secondary/60 dark:bg-muted/30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="badge-primary mb-3">Get in Touch</span>
           <h1 className="section-title text-foreground mb-2">Contact Us</h1>
@@ -112,7 +127,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Section - Compact */}
-      <section className="py-10 md:py-14">
+      <section className="py-8 md:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Contact Info */}
@@ -220,7 +235,15 @@ const Contact = () => {
                       <Label htmlFor="message" className="text-xs">Message *</Label>
                       <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Your message..." rows={4} required maxLength={1000} className="text-sm resize-none" />
                     </div>
-                    <Button type="submit" className="w-full" disabled={isSubmitting || cooldown > 0 || !formData.name || !formData.email || !formData.subject || !formData.message}>
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={TURNSTILE_SITE_KEY}
+                      onSuccess={(token) => setCaptchaToken(token)}
+                      onExpire={() => setCaptchaToken(null)}
+                      onError={() => setCaptchaToken(null)}
+                      options={{ theme: "auto", size: "normal" }}
+                    />
+                    <Button type="submit" className="w-full" disabled={isSubmitting || cooldown > 0 || !captchaToken || !formData.name || !formData.email || !formData.subject || !formData.message}>
                       {isSubmitting ? "Sending..." : cooldown > 0 ? `Wait ${cooldown}s` : "Send Message"}
                     </Button>
                   </form>

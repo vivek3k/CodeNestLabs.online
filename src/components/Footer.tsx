@@ -1,6 +1,26 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
+
+// ── Modern X (Twitter) logo ────────────────────────────────────
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
+// ── Instagram logo ─────────────────────────────────────────────
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,17 +33,17 @@ const Footer = () => {
   ];
 
   const serviceLinks = [
-    "React Web Apps",
-    "ML/DL Models",
+    "SaaS Web Applications",
+    "AI & Machine Learning",
     "Backend & API Development",
-    "Automation Tools",
-    "Research & Documentation",
-    "Testing & Debugging",
+    "Automation Systems",
+    "E-commerce Solutions",
+    "Testing & QA",
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://www.linkedin.com/in/codenestLabs", label: "LinkedIn" },
-    { icon: Twitter, href: "https://x.com/Code_Nest_Labs", label: "Twitter" },
+    { Icon: XIcon,         href: "https://x.com/CNLonline",                             label: "X (Twitter)" },
+    { Icon: InstagramIcon, href: "https://www.instagram.com/codenestlabsonline/",        label: "Instagram"   },
   ];
 
   return (
@@ -33,18 +53,18 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5 mb-5 group">
-              <img 
-                src={logo} 
-                alt="CodeNestLabs Logo" 
-                className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-105"
+              <img
+                src={logo}
+                alt="CodeNestLabs Logo"
+                className="h-9 w-9 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <span className="text-lg font-semibold tracking-tight">
                 CodeNest<span className="text-primary">Labs</span>
               </span>
             </Link>
             <p className="text-secondary-foreground/60 text-sm leading-relaxed mb-5">
-              The engineering partner for students, founders &amp; businesses.
-              150+ projects delivered across 15+ countries.
+              A product engineering studio for startups, SaaS companies &amp; modern businesses.
+              150+ products shipped worldwide.
             </p>
             <div className="flex gap-2">
               {socialLinks.map((social) => (
@@ -56,7 +76,7 @@ const Footer = () => {
                   className="w-9 h-9 rounded-lg bg-secondary-foreground/8 border border-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-200"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-4 h-4" />
+                  <social.Icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
@@ -129,7 +149,7 @@ const Footer = () => {
                 © {currentYear} CodeNestLabs. All rights reserved.
               </p>
               <p className="text-xs text-secondary-foreground/35 mt-0.5">
-                Developed by the CodeNestLabs Team · Proudly serving India
+                Built by the CodeNestLabs Engineering Team · Remote-first · Worldwide
               </p>
             </div>
             <div className="flex gap-6">

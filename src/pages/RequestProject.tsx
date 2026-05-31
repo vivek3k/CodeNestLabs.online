@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,6 +13,10 @@ import {
 import { CheckCircle2, Send, User, Briefcase, Link as LinkIcon, Rocket } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { Turnstile } from "@marsidev/react-turnstile";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
+
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string;
 
 const projectSchema = z.object({
   fullName: z.string().trim().min(1, "Name is required").max(100, "Name too long"),
@@ -28,7 +32,7 @@ const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 
 const projectTypes = [
-  { value: "react", label: "React Application" },
+  { value: "web", label: "Web Development" },
   { value: "ml", label: "Machine Learning" },
   { value: "dl", label: "Deep Learning" },
   { value: "fullstack", label: "Full-Stack Development" },
@@ -46,6 +50,8 @@ const RequestProject = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [cooldown, setCooldown] = useState(0);
   const [honeypot, setHoneypot] = useState("");
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   // Cooldown timer
   useEffect(() => {
@@ -84,6 +90,12 @@ const RequestProject = () => {
     // Honeypot check - if filled, it's a bot
     if (honeypot) {
       toast({ title: "Submission blocked", description: "Spam detected.", variant: "destructive" });
+      return;
+    }
+
+    // Captcha check
+    if (!captchaToken) {
+      toast({ title: "Verification required", description: "Please complete the CAPTCHA.", variant: "destructive" });
       return;
     }
 
@@ -128,12 +140,15 @@ const RequestProject = () => {
       if (response.ok) {
         setIsSubmitted(true);
         setCooldown(COOLDOWN_SECONDS);
+        setCaptchaToken(null);
         toast({ title: "Request Submitted!", description: "We'll get back to you within 24-48 hours." });
       } else {
         throw new Error("Failed to send message");
       }
     } catch {
       setCooldown(COOLDOWN_SECONDS);
+      setCaptchaToken(null);
+      turnstileRef.current?.reset();
       toast({ title: "Submission Failed", description: "Please try again or contact us directly.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
@@ -169,12 +184,12 @@ const RequestProject = () => {
   }
 
   return (
-    <main className="pt-16">
+    <main className="pt-16 page-enter">
       {/* Hero - Compact */}
-      <section className="relative py-20 md:py-24 overflow-hidden bg-secondary/60 dark:bg-transparent">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/4" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/6 rounded-full blur-[100px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <section className="relative py-8 md:py-12 overflow-hidden bg-secondary/60 dark:bg-transparent">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/4 dark:opacity-[0.07]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/6 rounded-full blur-[100px] dark:opacity-[0.07]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(79,70,229,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(79,70,229,0.03)_1px,transparent_1px)] bg-[size:50px_50px] dark:opacity-[0.06]" />
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="badge-primary mb-4 inline-flex">
             <Rocket className="w-3 h-3" />
@@ -193,7 +208,7 @@ const RequestProject = () => {
       </section>
 
       {/* Form Section - Compact */}
-      <section className="py-10 md:py-14">
+      <section className="py-8 md:py-10">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Honeypot - hidden from users, bots will fill it */}
@@ -273,9 +288,17 @@ const RequestProject = () => {
               </div>
             </div>
 
+            <Turnstile
+              ref={turnstileRef}
+              siteKey={TURNSTILE_SITE_KEY}
+              onSuccess={(token) => setCaptchaToken(token)}
+              onExpire={() => setCaptchaToken(null)}
+              onError={() => setCaptchaToken(null)}
+              options={{ theme: "auto", size: "normal" }}
+            />
             <Button
               type="submit"
-              disabled={isSubmitting || cooldown > 0 || !formData.fullName || !formData.email || !formData.projectType || !formData.description}
+              disabled={isSubmitting || cooldown > 0 || !captchaToken || !formData.fullName || !formData.email || !formData.projectType || !formData.description}
               className="w-full"
               size="lg"
             >

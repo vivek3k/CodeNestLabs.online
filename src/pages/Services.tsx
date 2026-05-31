@@ -25,10 +25,11 @@ const services = [
     description:
       "Pixel-perfect, blazing-fast SPAs and PWAs built with React, TypeScript, and modern tooling — designed to convert visitors into clients.",
     features: ["Single Page & Progressive Web Apps", "TypeScript + Tailwind", "API & Auth Integration", "Mobile-first responsive UI"],
-    gradient: "from-blue-500/20 via-cyan-500/10 to-transparent",
-    iconBg: "bg-blue-500/15 group-hover:bg-blue-500/25",
-    accent: "text-blue-600 dark:text-blue-400",
-    tag: "bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-400/20",
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=700&q=80",
+    gradient: "from-blue-600/40 via-blue-500/15 to-transparent",
+    iconBg: "bg-blue-500/20 group-hover:bg-blue-500/30",
+    accent: "text-blue-400",
+    tag: "bg-black/40 text-blue-300 border-blue-400/30 backdrop-blur-sm",
   },
   {
     icon: Brain,
@@ -36,10 +37,11 @@ const services = [
     description:
       "End-to-end ML pipelines — from data cleaning and feature engineering to model training, evaluation, and deployment on cloud infrastructure.",
     features: ["Predictive Analytics & Classification", "NLP & Text Processing", "Recommendation Engines", "Model APIs with FastAPI"],
-    gradient: "from-violet-500/20 via-purple-500/10 to-transparent",
-    iconBg: "bg-violet-500/15 group-hover:bg-violet-500/25",
-    accent: "text-violet-600 dark:text-violet-400",
-    tag: "bg-violet-500/10 text-violet-700 dark:text-violet-400 border-violet-400/20",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80",
+    gradient: "from-violet-600/40 via-purple-500/15 to-transparent",
+    iconBg: "bg-violet-500/20 group-hover:bg-violet-500/30",
+    accent: "text-violet-400",
+    tag: "bg-black/40 text-violet-300 border-violet-400/30 backdrop-blur-sm",
   },
   {
     icon: Layers,
@@ -47,10 +49,11 @@ const services = [
     description:
       "Custom neural networks, CNNs, and transformer models for vision tasks, object detection, and generative AI — production-grade and documented.",
     features: ["Image Recognition & Object Detection", "YOLOv8 / PyTorch / TensorFlow", "Generative AI & Diffusion Models", "Medical Imaging & CV Pipelines"],
-    gradient: "from-red-500/20 via-orange-500/10 to-transparent",
-    iconBg: "bg-red-500/15 group-hover:bg-red-500/25",
-    accent: "text-red-600 dark:text-red-400",
-    tag: "bg-red-500/10 text-red-700 dark:text-red-400 border-red-400/20",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=700&q=80",
+    gradient: "from-orange-600/40 via-amber-500/15 to-transparent",
+    iconBg: "bg-orange-500/20 group-hover:bg-orange-500/30",
+    accent: "text-orange-400",
+    tag: "bg-black/40 text-orange-300 border-orange-400/30 backdrop-blur-sm",
   },
   {
     icon: Server,
@@ -58,10 +61,11 @@ const services = [
     description:
       "Scalable REST and GraphQL APIs, microservices, database architecture, and cloud deployments built to handle real-world traffic.",
     features: ["REST & GraphQL APIs", "JWT / OAuth2 Authentication", "PostgreSQL, MongoDB, Redis", "AWS / Docker / CI-CD"],
-    gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
-    iconBg: "bg-emerald-500/15 group-hover:bg-emerald-500/25",
-    accent: "text-emerald-600 dark:text-emerald-400",
-    tag: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-400/20",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80",
+    gradient: "from-emerald-600/40 via-teal-500/15 to-transparent",
+    iconBg: "bg-emerald-500/20 group-hover:bg-emerald-500/30",
+    accent: "text-emerald-400",
+    tag: "bg-black/40 text-emerald-300 border-emerald-400/30 backdrop-blur-sm",
   },
   {
     icon: BarChart3,
@@ -69,10 +73,11 @@ const services = [
     description:
       "Interactive, real-time data dashboards that turn raw numbers into clear insights — built for business users and analysts alike.",
     features: ["Real-time WebSocket Updates", "Custom Charts & KPI Tiles", "Advanced Filtering & Drill-down", "PDF / Excel Export"],
-    gradient: "from-amber-500/20 via-yellow-500/10 to-transparent",
-    iconBg: "bg-amber-500/15 group-hover:bg-amber-500/25",
-    accent: "text-amber-600 dark:text-amber-400",
-    tag: "bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-400/20",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+    gradient: "from-amber-600/40 via-yellow-500/15 to-transparent",
+    iconBg: "bg-amber-500/20 group-hover:bg-amber-500/30",
+    accent: "text-amber-400",
+    tag: "bg-black/40 text-amber-300 border-amber-400/30 backdrop-blur-sm",
   },
   {
     icon: Bot,
@@ -80,21 +85,23 @@ const services = [
     description:
       "Intelligent automation scripts, web scrapers, Telegram/WhatsApp bots, and workflow pipelines that save hundreds of hours of manual work.",
     features: ["Web Scraping & Data Extraction", "Telegram / Discord Bots", "Scheduled Jobs & Pipelines", "Browser Automation (Playwright)"],
-    gradient: "from-pink-500/20 via-rose-500/10 to-transparent",
-    iconBg: "bg-pink-500/15 group-hover:bg-pink-500/25",
-    accent: "text-pink-600 dark:text-pink-400",
-    tag: "bg-pink-500/10 text-pink-700 dark:text-pink-400 border-pink-400/20",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80",
+    gradient: "from-pink-600/40 via-rose-500/15 to-transparent",
+    iconBg: "bg-pink-500/20 group-hover:bg-pink-500/30",
+    accent: "text-pink-400",
+    tag: "bg-black/40 text-pink-300 border-pink-400/30 backdrop-blur-sm",
   },
   {
     icon: FileText,
-    title: "Research & Documentation",
+    title: "E-commerce & Storefronts",
     description:
-      "IEEE-style research papers, technical documentation, project reports, and literature reviews — delivered to the highest academic standard.",
-    features: ["IEEE / ACM Formatted Papers", "Literature Review & Survey", "Technical Project Reports", "LaTeX & Word Formats"],
-    gradient: "from-cyan-500/20 via-sky-500/10 to-transparent",
-    iconBg: "bg-cyan-500/15 group-hover:bg-cyan-500/25",
-    accent: "text-cyan-600 dark:text-cyan-400",
-    tag: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border-cyan-400/20",
+      "Custom e-commerce platforms, multi-vendor marketplaces, and headless storefronts built for conversion, performance, and business scale.",
+    features: ["Custom Storefront & Product Catalog", "Cart, Checkout & Payment Integration", "Inventory & Order Management", "Customer Portal & Sales Analytics"],
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80",
+    gradient: "from-cyan-600/40 via-sky-500/15 to-transparent",
+    iconBg: "bg-cyan-500/20 group-hover:bg-cyan-500/30",
+    accent: "text-cyan-400",
+    tag: "bg-black/40 text-cyan-300 border-cyan-400/30 backdrop-blur-sm",
   },
   {
     icon: Bug,
@@ -102,10 +109,11 @@ const services = [
     description:
       "Comprehensive testing — unit, integration, E2E, and performance — so your product ships with zero surprises.",
     features: ["Unit & Integration Tests", "E2E with Playwright / Cypress", "Performance & Load Testing", "Bug Fixing & Code Review"],
-    gradient: "from-indigo-500/20 via-violet-500/10 to-transparent",
-    iconBg: "bg-indigo-500/15 group-hover:bg-indigo-500/25",
-    accent: "text-indigo-600 dark:text-indigo-400",
-    tag: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border-indigo-400/20",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&q=80",
+    gradient: "from-indigo-600/40 via-violet-500/15 to-transparent",
+    iconBg: "bg-indigo-500/20 group-hover:bg-indigo-500/30",
+    accent: "text-indigo-400",
+    tag: "bg-black/40 text-indigo-300 border-indigo-400/30 backdrop-blur-sm",
   },
   {
     icon: Settings,
@@ -113,10 +121,11 @@ const services = [
     description:
       "Complete SaaS products — multi-tenancy, billing, auth, admin dashboards — built from scratch and ready to onboard your first paying customer.",
     features: ["Multi-tenant Architecture", "Stripe / Razorpay Billing", "Role-based Access Control", "Admin & Analytics Dashboard"],
-    gradient: "from-green-500/20 via-emerald-500/10 to-transparent",
-    iconBg: "bg-green-500/15 group-hover:bg-green-500/25",
-    accent: "text-green-600 dark:text-green-400",
-    tag: "bg-green-500/10 text-green-700 dark:text-green-400 border-green-400/20",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
+    gradient: "from-green-600/40 via-emerald-500/15 to-transparent",
+    iconBg: "bg-green-500/20 group-hover:bg-green-500/30",
+    accent: "text-green-400",
+    tag: "bg-black/40 text-green-300 border-green-400/30 backdrop-blur-sm",
   },
 ];
 
@@ -124,38 +133,38 @@ const processSteps = [
   {
     step: "01",
     icon: MessageSquareQuote,
-    title: "Discuss",
-    description: "Share your idea, requirements, and timeline. We ask the right questions to understand exactly what you need.",
+    title: "Discovery",
+    description: "A focused call to understand your business goals, technical landscape, and what needs to be built — not just what you asked for.",
   },
   {
     step: "02",
     icon: Lightbulb,
-    title: "Plan",
-    description: "We break down your project into a clear roadmap — tech stack, architecture, milestones, and pricing.",
+    title: "Architecture",
+    description: "We design the technical approach and produce a fixed-price proposal with stack, milestones, and timeline. You approve everything upfront.",
   },
   {
     step: "03",
     icon: Code2,
-    title: "Build",
-    description: "Development begins with full transparency. Daily updates and feedback at every stage.",
+    title: "Engineering",
+    description: "Development runs in clear sprints with working builds at each milestone. You have direct input throughout — no black boxes.",
   },
   {
     step: "04",
     icon: ShieldCheck,
-    title: "Deliver",
-    description: "Tested, documented, and handed over — with post-delivery support included.",
+    title: "Launch",
+    description: "Fully tested, deployed, and documented. Complete IP handover at delivery, with ongoing support available as you scale.",
   },
 ];
 
 const Services = () => {
   return (
-    <main className="pt-16 bg-background">
+    <main className="pt-16 bg-background page-enter">
 
       {/* Hero */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/4" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-primary/6 rounded-full blur-[100px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <section className="relative py-10 md:py-14 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/4 dark:opacity-[0.08]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-primary/6 rounded-full blur-[100px] dark:opacity-[0.08]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(79,70,229,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(79,70,229,0.03)_1px,transparent_1px)] bg-[size:50px_50px] dark:opacity-[0.07]" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="badge-primary mb-4 inline-flex">
@@ -168,8 +177,8 @@ const Services = () => {
             <span className="text-gradient glow-text">Need to Ship.</span>
           </h1>
           <p className="section-subtitle mx-auto text-base">
-            From a student's final-year ML project to a founder's production SaaS —
-            we have the expertise to build it fast, clean, and right the first time.
+            From your first SaaS MVP to enterprise-grade infrastructure — we build software
+            that scales with your business, not against it.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="glow-box px-8">
@@ -185,34 +194,56 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
             {services.map((service) => (
               <div
                 key={service.title}
-                className={`group bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300`}
+                className="group bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:shadow-black/20 hover:-translate-y-1.5 hover:border-border/80 transition-all duration-350"
               >
-                {/* Coloured gradient header */}
-                <div className={`h-28 bg-gradient-to-br ${service.gradient} flex items-center justify-between px-5 relative`}>
-                  <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:14px_14px]" />
-                  <span className={`relative px-2.5 py-1 rounded-full text-[10px] font-semibold border ${service.tag}`}>
-                    {service.title.split(" ")[0]}
-                  </span>
-                  <div className={`relative w-14 h-14 rounded-2xl ${service.iconBg} flex items-center justify-center transition-colors duration-200 shadow-sm`}>
-                    <service.icon className={`w-7 h-7 ${service.accent}`} />
+                {/* ── Image header ──────────────────────────────── */}
+                <div className="relative h-44 overflow-hidden">
+                  {/* Photo */}
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                  />
+                  {/* Dark gradient so tag/icon stay readable */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  {/* Service colour tint */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient}`} />
+                  {/* Subtle dot pattern */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.07)_1px,transparent_1px)] bg-[size:16px_16px] opacity-60" />
+
+                  {/* Category pill + icon — top row */}
+                  <div className="absolute top-3 inset-x-3 flex items-start justify-between">
+                    <span className={`px-2.5 py-1 rounded-full text-[10px] font-semibold border ${service.tag}`}>
+                      {service.title.split(" ")[0]}
+                    </span>
+                    <div className={`w-11 h-11 rounded-xl ${service.iconBg} flex items-center justify-center transition-all duration-300 shadow-lg backdrop-blur-md group-hover:scale-110`}>
+                      <service.icon className={`w-5 h-5 ${service.accent}`} />
+                    </div>
+                  </div>
+
+                  {/* Service title on image — bottom left */}
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <h3 className="text-sm font-bold text-white leading-tight drop-shadow-sm">
+                      {service.title}
+                    </h3>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-5">
-                  <h3 className="text-base font-semibold text-foreground mb-2">{service.title}</h3>
+                {/* ── Content ───────────────────────────────────── */}
+                <div className="p-5 pt-4">
                   <p className="text-muted-foreground text-xs leading-relaxed mb-4">{service.description}</p>
                   <ul className="space-y-2">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2 text-xs">
                         <CheckCircle2 className={`w-3.5 h-3.5 ${service.accent} flex-shrink-0 mt-0.5`} />
-                        <span className="text-foreground/80">{feature}</span>
+                        <span className="text-foreground/75">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -224,7 +255,7 @@ const Services = () => {
       </section>
 
       {/* Process */}
-      <section className="py-16 md:py-20 bg-secondary/60 dark:bg-muted/20">
+      <section className="py-10 md:py-14 bg-secondary/60 dark:bg-muted/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="badge-primary mb-4 inline-flex">How It Works</span>
@@ -256,10 +287,10 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(239,68,68,0.15),transparent_70%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.04)_1px,transparent_1px)] bg-[size:40px_40px]" />
+      <section className="py-14 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 dark:opacity-[0.07]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,70,229,0.15),transparent_70%)] dark:opacity-[0.08]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(79,70,229,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(79,70,229,0.04)_1px,transparent_1px)] bg-[size:40px_40px] dark:opacity-[0.06]" />
 
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="badge-primary mb-5 inline-flex">
@@ -270,8 +301,8 @@ const Services = () => {
             Ready to Get Started?
           </h2>
           <p className="text-muted-foreground text-sm mb-8 max-w-md mx-auto leading-relaxed">
-            Tell us what you need — we'll scope it, price it, and ship it.
-            Free consultation. No commitment.
+            Tell us what you're building — we'll scope it, architect it, and ship it.
+            Free discovery call. Fixed pricing. No surprises.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="glow-box px-8">

@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import FloatingWidgets from "./components/FloatingWidgets";
 import Intro from "./pages/Intro";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
@@ -24,6 +26,7 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollToTop />
       {!isIntroPage && <Navbar />}
       <div className="flex-1">
         <Routes>
@@ -39,13 +42,14 @@ const AppContent = () => {
         </Routes>
       </div>
       {!isIntroPage && <Footer />}
+      {!isIntroPage && <FloatingWidgets />}
     </div>
   );
 };
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="dark" storageKey="codenestlabs-theme">
+    <ThemeProvider defaultTheme="light" storageKey="codenestlabs-theme">
       <TooltipProvider>
         <Toaster />
         <Sonner />
