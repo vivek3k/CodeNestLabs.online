@@ -96,6 +96,14 @@ const Contact = () => {
       );
 
       if (response.ok) {
+        // Fire Google Ads conversion
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-18277612123/eo5jCOnOzMYcENv0uItE",
+            value: 1.0,
+            currency: "INR",
+          });
+        }
         setIsSubmitted(true);
         setCooldown(COOLDOWN_SECONDS);
         setCaptchaToken(null);
