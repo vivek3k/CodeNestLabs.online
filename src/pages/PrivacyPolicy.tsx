@@ -45,8 +45,8 @@ const PrivacyPolicy = () => {
           <div className="mt-8 p-4 rounded-lg bg-primary/5 border border-primary/20 text-center">
             <Globe className="w-6 h-6 text-primary mx-auto mb-2" />
             <p className="text-sm text-foreground mb-1">Questions about privacy?</p>
-            <a href="mailto:contactcodenestlabs@gmail.com" className="text-primary hover:underline text-xs">
-              contactcodenestlabs@gmail.com
+            <a href="mailto:support@codenestlabs.in" className="text-primary hover:underline text-xs">
+              support@codenestlabs.in
             </a>
           </div>
 

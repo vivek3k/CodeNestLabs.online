@@ -29,6 +29,7 @@ const Footer = () => {
     { name: "Home", path: "/home" },
     { name: "Services", path: "/services" },
     { name: "Request Project", path: "/request" },
+    { name: "Careers", path: "/careers" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -125,17 +126,23 @@ const Footer = () => {
                   <Mail className="w-3.5 h-3.5 text-primary" />
                 </div>
                 <a
-                  href="mailto:contactcodenestlabs@gmail.com"
+                  href="mailto:support@codenestlabs.in"
                   className="hover:text-primary transition-colors duration-200"
                 >
-                  contactcodenestlabs@gmail.com
+                  support@codenestlabs.in
                 </a>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-secondary-foreground/60">
+                <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <MapPin className="w-3.5 h-3.5 text-primary" />
+                </div>
+                <span>Lakshmi Nagar Street, Near SVC Gemini Theatre &amp; Maharashtra Bank, Mancherial, Telangana</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-secondary-foreground/60">
                 <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-3.5 h-3.5 text-primary" />
+                  <span className="text-[10px] font-bold text-primary">GST</span>
                 </div>
-                <span>Remote • Worldwide</span>
+                <span>36AAJCE7831M1Z4</span>
               </li>
             </ul>
           </div>
@@ -168,7 +175,7 @@ const Footer = () => {
                 </Link>
               </div>
               <p className="text-xs text-secondary-foreground/50">
-                Last updated on 31/05/2026
+                Last updated on 07/07/2026
               </p>
             </div>
           </div>

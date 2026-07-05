@@ -138,7 +138,7 @@ No commitment required — we're happy to guide you through the process.`,
 • WhatsApp: Use the button below for quick responses
 • Request Project: Submit your requirements via the form
 • Contact Page: Send a detailed enquiry
-• Email: contactcodenestlabs@gmail.com
+• Email: support@codenestlabs.in
 
 We typically respond within a few hours during business hours.`,
   },
