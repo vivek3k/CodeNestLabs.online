@@ -21,6 +21,7 @@ const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 const COOLDOWN_SECONDS = 10;
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string;
+const CAPTCHA_ENABLED = Boolean(TURNSTILE_SITE_KEY);
 
 const Contact = () => {
   const { toast } = useToast();
@@ -55,7 +56,7 @@ const Contact = () => {
     }
 
     // Captcha check
-    if (!captchaToken) {
+    if (CAPTCHA_ENABLED && !captchaToken) {
       toast({ title: "Verification required", description: "Please complete the CAPTCHA.", variant: "destructive" });
       return;
     }
@@ -243,15 +244,17 @@ const Contact = () => {
                       <Label htmlFor="message" className="text-xs">Message *</Label>
                       <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Your message..." rows={4} required maxLength={1000} className="text-sm resize-none" />
                     </div>
-                    <Turnstile
-                      ref={turnstileRef}
-                      siteKey={TURNSTILE_SITE_KEY}
-                      onSuccess={(token) => setCaptchaToken(token)}
-                      onExpire={() => setCaptchaToken(null)}
-                      onError={() => setCaptchaToken(null)}
-                      options={{ theme: "auto", size: "normal" }}
-                    />
-                    <Button type="submit" className="w-full" disabled={isSubmitting || cooldown > 0 || !captchaToken || !formData.name || !formData.email || !formData.subject || !formData.message}>
+                    {CAPTCHA_ENABLED && (
+                      <Turnstile
+                        ref={turnstileRef}
+                        siteKey={TURNSTILE_SITE_KEY}
+                        onSuccess={(token) => setCaptchaToken(token)}
+                        onExpire={() => setCaptchaToken(null)}
+                        onError={() => setCaptchaToken(null)}
+                        options={{ theme: "auto", size: "normal" }}
+                      />
+                    )}
+                    <Button type="submit" className="w-full" disabled={isSubmitting || cooldown > 0 || (CAPTCHA_ENABLED && !captchaToken) || !formData.name || !formData.email || !formData.subject || !formData.message}>
                       {isSubmitting ? "Sending..." : cooldown > 0 ? `Wait ${cooldown}s` : "Send Message"}
                     </Button>
                   </form>

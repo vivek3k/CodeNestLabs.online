@@ -17,6 +17,7 @@ import { Turnstile } from "@marsidev/react-turnstile";
 import type { TurnstileInstance } from "@marsidev/react-turnstile";
 
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string;
+const CAPTCHA_ENABLED = Boolean(TURNSTILE_SITE_KEY);
 
 const projectSchema = z.object({
   fullName: z.string().trim().min(1, "Name is required").max(100, "Name too long"),
@@ -94,7 +95,7 @@ const RequestProject = () => {
     }
 
     // Captcha check
-    if (!captchaToken) {
+    if (CAPTCHA_ENABLED && !captchaToken) {
       toast({ title: "Verification required", description: "Please complete the CAPTCHA.", variant: "destructive" });
       return;
     }
@@ -288,17 +289,19 @@ const RequestProject = () => {
               </div>
             </div>
 
-            <Turnstile
-              ref={turnstileRef}
-              siteKey={TURNSTILE_SITE_KEY}
-              onSuccess={(token) => setCaptchaToken(token)}
-              onExpire={() => setCaptchaToken(null)}
-              onError={() => setCaptchaToken(null)}
-              options={{ theme: "auto", size: "normal" }}
-            />
+            {CAPTCHA_ENABLED && (
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={TURNSTILE_SITE_KEY}
+                onSuccess={(token) => setCaptchaToken(token)}
+                onExpire={() => setCaptchaToken(null)}
+                onError={() => setCaptchaToken(null)}
+                options={{ theme: "auto", size: "normal" }}
+              />
+            )}
             <Button
               type="submit"
-              disabled={isSubmitting || cooldown > 0 || !captchaToken || !formData.fullName || !formData.email || !formData.projectType || !formData.description}
+              disabled={isSubmitting || cooldown > 0 || (CAPTCHA_ENABLED && !captchaToken) || !formData.fullName || !formData.email || !formData.projectType || !formData.description}
               className="w-full"
               size="lg"
             >
