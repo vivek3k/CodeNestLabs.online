@@ -34,6 +34,7 @@ const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 
 const projectTypes = [
   { value: "web", label: "Web Development" },
+  { value: "saas", label: "SaaS Development" },
   { value: "ml", label: "Machine Learning" },
   { value: "dl", label: "Deep Learning" },
   { value: "fullstack", label: "Full-Stack Development" },
