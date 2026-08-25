@@ -41,6 +41,7 @@ const projectTypes = [
   { value: "api", label: "API Development" },
   { value: "dashboard", label: "Dashboard Development" },
   { value: "automation", label: "Automation Tools" },
+  { value: "marketing", label: "Digital Marketing" },
   { value: "other", label: "Other" },
 ];
 
