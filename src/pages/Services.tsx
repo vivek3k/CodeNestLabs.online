@@ -16,6 +16,7 @@ import {
   FileText,
   Bug,
   Bot,
+  Megaphone,
 } from "lucide-react";
 
 const services = [
@@ -126,6 +127,18 @@ const services = [
     iconBg: "bg-green-500/20 group-hover:bg-green-500/30",
     accent: "text-green-400",
     tag: "bg-black/40 text-green-300 border-green-400/30 backdrop-blur-sm",
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
+    description:
+      "Full-funnel digital marketing that builds your brand and drives measurable growth — from paid ads to content that keeps your audience engaged.",
+    features: ["Meta & Google Ads Campaigns", "PR & Brand Promotion", "Video Editing & Content Creation", "Social Media Management"],
+    image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=700&q=80",
+    gradient: "from-fuchsia-600/40 via-pink-500/15 to-transparent",
+    iconBg: "bg-fuchsia-500/20 group-hover:bg-fuchsia-500/30",
+    accent: "text-fuchsia-400",
+    tag: "bg-black/40 text-fuchsia-300 border-fuchsia-400/30 backdrop-blur-sm",
   },
 ];
 
