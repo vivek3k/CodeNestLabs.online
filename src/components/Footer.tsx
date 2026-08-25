@@ -37,6 +37,7 @@ const Footer = () => {
     "SaaS Web Applications",
     "AI & Machine Learning",
     "Backend & API Development",
+    "Digital Marketing",
     "Automation Systems",
     "E-commerce Solutions",
     "Testing & QA",
@@ -53,15 +54,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2.5 mb-5 group">
+            <Link to="/" className="flex items-center mb-5 group">
               <img
                 src={logo}
-                alt="CodeNestLabs Logo"
-                className="h-9 w-9 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
+                alt="CodeNestLabs - Product Engineering & Digital Marketing Studio"
+                className="h-11 w-auto rounded-lg bg-black p-1 object-contain transition-transform duration-300 group-hover:scale-105"
               />
-              <span className="text-lg font-semibold tracking-tight">
-                CodeNest<span className="text-primary">Labs</span>
-              </span>
             </Link>
             <p className="text-secondary-foreground/60 text-sm leading-relaxed mb-5">
               A product engineering studio for startups, SaaS companies &amp; modern businesses.

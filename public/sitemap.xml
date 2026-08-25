@@ -4,41 +4,49 @@
   <!-- Primary domain: codenestlabs.in -->
   <url>
     <loc>https://codenestlabs.in/</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.in/services</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.in/our-work</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.in/request</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.in/careers</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.in/contact</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.in/privacy</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.in/terms</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
@@ -46,41 +54,49 @@
   <!-- Alternate domain: codenestlabs.online -->
   <url>
     <loc>https://codenestlabs.online/</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.online/services</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.online/our-work</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.online/request</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.online/careers</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.online/contact</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.online/privacy</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
     <loc>https://codenestlabs.online/terms</loc>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>

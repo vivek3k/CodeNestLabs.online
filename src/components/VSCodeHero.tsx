@@ -244,15 +244,15 @@ export default function VSCodeHero() {
 
           {/* Left column */}
           <div>
-            <div className="vsc-headline">
-              <div className="vsc-h-black">From idea to</div>
-              <div className="vsc-h-indigo">live product.</div>
-              <div className="vsc-h-sub">We build it for you.</div>
-            </div>
+            <h1 className="vsc-headline">
+              <span className="vsc-h-black block">From idea to</span>
+              <span className="vsc-h-indigo block">live product.</span>
+              <span className="vsc-h-sub block">We build it for you.</span>
+            </h1>
             <p className="vsc-subtext">
-              CodeNestLabs is the product engineering studio for startups, SaaS companies,
-              and modern businesses that need software built{" "}
-              <strong>fast, clean</strong>, and{" "}
+              CodeNestLabs is a <strong>web development, AI &amp; digital marketing</strong>{" "}
+              company for startups, SaaS companies, and modern businesses that need software
+              built <strong>fast, clean</strong>, and{" "}
               <strong>architected to scale</strong> — without the enterprise agency overhead.
             </p>
             <div className="vsc-cta-row">

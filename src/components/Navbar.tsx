@@ -44,15 +44,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <Link to="/home" className="flex items-center gap-2.5 group">
+          <Link to="/home" className="flex items-center group">
             <img
               src={logo}
-              alt="CodeNestLabs Logo"
-              className="h-10 w-10 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
+              alt="CodeNestLabs - Product Engineering & Digital Marketing Studio"
+              className="h-11 md:h-12 w-auto rounded-lg bg-black p-1 object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="text-lg font-semibold text-foreground tracking-tight">
-              CodeNest<span className="text-primary">Labs</span>
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

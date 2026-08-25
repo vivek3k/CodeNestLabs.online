@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://codenestlabs.in/sitemap.xml
+Sitemap: https://codenestlabs.online/sitemap.xml

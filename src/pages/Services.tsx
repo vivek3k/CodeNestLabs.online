@@ -190,8 +190,9 @@ const Services = () => {
             <span className="text-gradient glow-text">Need to Ship.</span>
           </h1>
           <p className="section-subtitle mx-auto text-base">
-            From your first SaaS MVP to enterprise-grade infrastructure — we build software
-            that scales with your business, not against it.
+            From your first SaaS MVP to enterprise-grade infrastructure to running Meta &amp; Google Ads —
+            we're the technology solutions and digital marketing company businesses in Mancherial and
+            beyond trust to scale.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="glow-box px-8">
