@@ -4,6 +4,26 @@ import { ArrowRight, ExternalLink, Globe } from "lucide-react";
 
 const projects = [
   {
+    title: "Elaan Crafted",
+    url: "https://www.elaancrafted.com/",
+    preview: "/elaancrafted-preview.png",
+    category: "Fashion & Craft",
+    categoryStyle: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-400/20",
+    accentHover: "hover:border-cyan-400/30",
+    description:
+      "A refined e-commerce experience for handcrafted goods, blending elegant visual storytelling with a smooth shopping journey built for conversion.",
+  },
+  {
+    title: "The Mulberry Bush",
+    url: "https://www.themulberrybush.co.in/",
+    preview: "/mulberrybush-preview.png",
+    category: "Lifestyle & Retail",
+    categoryStyle: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-400/20",
+    accentHover: "hover:border-rose-400/30",
+    description:
+      "A charming lifestyle and retail storefront built to showcase products with warmth and character — designed to turn browsing visitors into repeat customers.",
+  },
+  {
     title: "PawGap Pets Yoga",
     url: "https://pawgapetsyoga.com/",
     preview: "/pawga-preview.png",
@@ -42,26 +62,6 @@ const projects = [
     accentHover: "hover:border-violet-400/30",
     description:
       "Corporate digital presence engineered to communicate professional authority, strengthen brand positioning, and support client acquisition for a consulting business.",
-  },
-  {
-    title: "The Mulberry Bush",
-    url: "https://www.themulberrybush.co.in/",
-    preview: "/mulberrybush-preview.png",
-    category: "Lifestyle & Retail",
-    categoryStyle: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-400/20",
-    accentHover: "hover:border-rose-400/30",
-    description:
-      "A charming lifestyle and retail storefront built to showcase products with warmth and character — designed to turn browsing visitors into repeat customers.",
-  },
-  {
-    title: "Elaan Crafted",
-    url: "https://www.elaancrafted.com/",
-    preview: "/elaancrafted-preview.png",
-    category: "Fashion & Craft",
-    categoryStyle: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-400/20",
-    accentHover: "hover:border-cyan-400/30",
-    description:
-      "A refined e-commerce experience for handcrafted goods, blending elegant visual storytelling with a smooth shopping journey built for conversion.",
   },
 ];
 
