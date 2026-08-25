@@ -2,13 +2,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingWidgets from "./components/FloatingWidgets";
-import Intro from "./pages/Intro";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import OurWork from "./pages/OurWork";
@@ -22,16 +21,13 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const AppContent = () => {
-  const location = useLocation();
-  const isIntroPage = location.pathname === "/";
-
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      {!isIntroPage && <Navbar />}
+      <Navbar />
       <div className="flex-1">
         <Routes>
-          <Route path="/" element={<Intro />} />
+          <Route path="/" element={<Index />} />
           <Route path="/home" element={<Index />} />
           <Route path="/services" element={<Services />} />
           <Route path="/our-work" element={<OurWork />} />
@@ -43,8 +39,8 @@ const AppContent = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-      {!isIntroPage && <Footer />}
-      {!isIntroPage && <FloatingWidgets />}
+      <Footer />
+      <FloatingWidgets />
     </div>
   );
 };
